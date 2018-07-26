@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
 
     <name>spring-boot-dynamic-datasource</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Demo project for Spring Boot 2 mybatis dynamic datasource</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
