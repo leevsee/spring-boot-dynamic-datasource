@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 /**
- * Description:
+ * Description: spring多数据源
  * Package: com.leeves.springbootdynamicdatasource.config
  *
  * @author Leeves

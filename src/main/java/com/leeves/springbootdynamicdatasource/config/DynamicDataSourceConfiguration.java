@@ -19,7 +19,7 @@ import java.util.Map;
 import javax.sql.DataSource;
 
 /**
- * Description:
+ * Description: 读取多个数据源配置，并根据键值对的方式，添加到spring多数据源配置中
  * Package: com.leeves.springbootdynamicdatasource.config
  *
  * @author Leeves
@@ -34,6 +34,7 @@ public class DynamicDataSourceConfiguration {
         return DruidDataSourceBuilder.create().build();
     }
 
+    //TODO: 如有多个这里需要添加
     @Bean
     @ConfigurationProperties(prefix = "dynamic.datasource.slave1")
     public DataSource dbSlave1() {
@@ -41,7 +42,7 @@ public class DynamicDataSourceConfiguration {
     }
 
     /**
-     * 核心动态数据源
+     * 核心动态数据源，添加多个数据源到spring中
      *
      * @return 数据源实例
      */
@@ -52,6 +53,7 @@ public class DynamicDataSourceConfiguration {
         Map<Object, Object> dataSourceMap = new HashMap<>(16);
         dataSourceMap.put(DataSourceType.DB_MASTER, dbMaster());
         dataSourceMap.put(DataSourceType.DB_SLAVE1, dbSlave1());
+        //TODO: 如有多个这里需要添加
         dataSource.setTargetDataSources(dataSourceMap);
         return dataSource;
     }

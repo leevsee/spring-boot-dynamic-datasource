@@ -10,14 +10,7 @@ import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
-/**
- * <p>
- *  Mapper 接口
- * </p>
- *
- * @author Leeves
- * @since 2018-07-04
- */
+
 public interface DbTwoTableMapper {
 
 //    @DS(dtaSourceType = DataSourceType.DB_SLAVE1)

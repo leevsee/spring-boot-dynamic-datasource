@@ -11,4 +11,5 @@ public class SpringBootDynamicDatasourceApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringBootDynamicDatasourceApplication.class, args);
     }
+
 }

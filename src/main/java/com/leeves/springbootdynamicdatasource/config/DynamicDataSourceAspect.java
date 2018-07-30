@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 import java.lang.reflect.Method;
 
 /**
- * Description:
+ * Description: aop类，用于动态设置数据源
  * Package: com.leeves.springbootdynamicdatasource.config
  *
  * @author Leeves
@@ -32,8 +32,6 @@ public class DynamicDataSourceAspect {
     /**
      * 执行方法前更换数据源
      *
-     * @param joinPoint 切点
-     * @param ds        动态数据源
      */
     @Before("@annotation(ds)")
     public void doBefore(JoinPoint joinPoint, DS ds) {
@@ -50,8 +48,6 @@ public class DynamicDataSourceAspect {
     /**
      * 执行方法后清除数据源设置
      *
-     * @param joinPoint 切点
-     * @param ds        动态数据源
      */
     @After("@annotation(ds)")
     public void doAfter(JoinPoint joinPoint, DS ds) {
@@ -63,9 +59,8 @@ public class DynamicDataSourceAspect {
     /**
      * 在service下以query开头的方法，且没有用DS注解，则使用副库
      *
-     * @param joinPoint        切点
      */
-/*    @Before(value = "execution(* com.leeves.springbootdynamicdatasource.service.*.query*(..))")
+    @Before(value = "execution(* com.leeves.springbootdynamicdatasource.service.*.query*(..))")
     public void doBeforeWithSlave(JoinPoint joinPoint) {
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
         //获取当前切点方法对象
@@ -83,6 +78,15 @@ public class DynamicDataSourceAspect {
         if (null == method.getAnnotation(DS.class)) {
             DynamicDataSourceContextHolder.setSlave();
         }
-    }*/
+    }
+
+    /**
+     * 在service下以query开头的方法，清除数据源
+     *
+     */
+    @After(value = "execution(* com.leeves.springbootdynamicdatasource.service.*.query*(..))")
+    public void doAfter(JoinPoint joinPoint) {
+        DynamicDataSourceContextHolder.clear();
+    }
 
 }

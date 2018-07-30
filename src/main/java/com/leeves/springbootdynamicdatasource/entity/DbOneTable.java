@@ -2,14 +2,7 @@ package com.leeves.springbootdynamicdatasource.entity;
 
 
 
-/**
- * <p>
- * 
- * </p>
- *
- * @author Leeves
- * @since 2018-07-04
- */
+
 public class DbOneTable {
 
     private Long id;

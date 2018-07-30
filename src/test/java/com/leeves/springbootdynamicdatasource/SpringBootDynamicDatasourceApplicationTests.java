@@ -21,8 +21,8 @@ public class SpringBootDynamicDatasourceApplicationTests {
 
     @Test
     public void test() {
-        System.out.println("mDbOneTableService:"+mDbOneTableService.selectAll());
         System.out.println("mDbTwoTableService:"+mDbTwoTableService.queryAll());
+        System.out.println("mDbOneTableService:"+mDbOneTableService.selectAll());
     }
 
 }

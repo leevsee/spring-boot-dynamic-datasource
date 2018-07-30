@@ -8,7 +8,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Description:
+ * Description: 数据源注解类
  * Package: com.leeves.springbootdynamicdatasource.annotation
  *
  * @author Leeves
