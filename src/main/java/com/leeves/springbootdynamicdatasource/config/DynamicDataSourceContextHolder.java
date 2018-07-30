@@ -37,7 +37,7 @@ public class DynamicDataSourceContextHolder {
     }
 
     /**
-     * 通过aop 已query开头，设置从从库读取数据
+     * 通过aop 以query开头，设置从从库读取数据
      */
     public static void setSlave() {
         DynamicDataSourceContextHolder.set(DataSourceType.DB_SLAVE1);
